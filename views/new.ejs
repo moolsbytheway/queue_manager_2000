@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Add item</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+</head>
+<body class="container">
+<h1>Queue Manager 2000</h1>
+<small>The most powerfull and advanced queue manager in history*</small>
+<br/>
+<br/>
+<body class="container">
+
+<ul style="padding-left: 0">
+    <a href="/new"><b>Add item</b></a>
+    <a href="/">Queue</a>
+    <a href="/remove">Remove item</a>
+</ul>
+
+<h3>Add Item</h3>
+<form action="/add_item" method="POST">
+    <table>
+        <tr>
+            <td>
+                JIRA:
+            </td>
+            <td><input type="text" name="jira"></td>
+        </tr>
+        <tr>
+            <td>
+                Owner:
+            </td>
+            <td><input type="text" name="owner"></td>
+        </tr>
+        <tr>
+            <td>
+            </td>
+            <td><input type="submit" value="Submit"></td>
+        </tr>
+    </table>
+</form>
+
+</body>
+</html>

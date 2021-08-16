@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Queue</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+</head>
+<body class="container">
+<h1>Queue Manager 2000</h1>
+<small>The most powerfull and advanced queue manager in history*</small>
+<br/>
+<br/>
+<ul style="padding-left: 0">
+    <a href="/new">Add item</a>
+    <a href="/"><b>Queue</b></a>
+    <a href="/remove">Remove item</a>
+</ul>
+
+<h3>Queue</h3>
+
+<table class="table">
+    <thead>
+    <tr>
+        <th>#</th>
+        <th><b>JIRA</b></th>
+        <th>Owner</th>
+    </tr>
+    </thead>
+    <tbody>
+    <% list.forEach(function(item, index) { %>
+    <tr>
+        <td> <%= index + 1 %> </td>
+        <td> <%= item.jira %> </td>
+        <td> <%= item.owner %> </td>
+    </tr>
+    <% }); %>
+    </tbody>
+</table>
+
+</body>
+</html>
