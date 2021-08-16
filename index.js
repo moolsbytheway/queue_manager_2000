@@ -11,7 +11,8 @@ app.use(bodyParser.json());
 app.get('/', function (req,
                        res) {
 
-    db.find({}).sort({ _id: -1, team: 1 }).exec((err, docs) => {
+    db.find({}).sort({ date: -1, team: 1 }).exec((err, docs) => {
+        console.log(docs);
         res.render("queue", {list: docs});
       });
 
@@ -30,6 +31,7 @@ app.get('/remove', function (req,
 app.post('/add_item', function (req, res) {
 
     var doc = req.body;
+    doc.date = new Date();
     db.insert(doc, function (err, doc) {
         res.redirect("/");
     });
