@@ -23,14 +23,16 @@
         <th>#</th>
         <th><b>JIRA</b></th>
         <th>Owner</th>
+        <th>Team</th>
     </tr>
     </thead>
     <tbody>
     <% list.forEach(function(item, index) { %>
     <tr>
-        <td> <%= index + 1 %> </td>
+        <td> <%= item._id %> </td>
         <td> <%= item.jira %> </td>
         <td> <%= item.owner %> </td>
+        <td> <%= item.team %> </td>
     </tr>
     <% }); %>
     </tbody>
