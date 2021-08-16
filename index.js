@@ -11,9 +11,9 @@ app.use(bodyParser.json());
 app.get('/', function (req,
                        res) {
 
-    db.find({}, function (err, docs) {
+    db.find({}).sort({ _id: -1, team: 1 }).exec((err, docs) => {
         res.render("queue", {list: docs});
-    });
+      });
 
 });
 
@@ -30,7 +30,6 @@ app.get('/remove', function (req,
 app.post('/add_item', function (req, res) {
 
     var doc = req.body;
-    console.log(doc)
     db.insert(doc, function (err, doc) {
         res.redirect("/");
     });
@@ -40,7 +39,6 @@ app.post('/add_item', function (req, res) {
 app.post('/remove_item', function (req, res) {
 
     var doc = req.body.jira
-    console.log(doc)
 
     db.remove({jira: doc}, function (err) {
         res.redirect("/");
